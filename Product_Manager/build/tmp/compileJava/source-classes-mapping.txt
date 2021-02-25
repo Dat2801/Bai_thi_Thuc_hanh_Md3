@@ -1,0 +1,12 @@
+service/IProductService.java
+ service.IProductService
+service/SingletonConnection.java
+ service.SingletonConnection
+service/IService.java
+ service.IService
+model/Product.java
+ model.Product
+controller/ProductServlet.java
+ controller.ProductServlet
+service/ProductService.java
+ service.ProductService
