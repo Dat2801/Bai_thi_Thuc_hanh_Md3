@@ -6,7 +6,7 @@ service/IService.java
  service.IService
 model/Product.java
  model.Product
-controller/ProductServlet.java
- controller.ProductServlet
 service/ProductService.java
  service.ProductService
+controller/ProductServlet.java
+ controller.ProductServlet

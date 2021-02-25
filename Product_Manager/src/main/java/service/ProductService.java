@@ -40,7 +40,7 @@ public class ProductService implements IProductService {
     public Product save(int id, Product product) {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement("insert into product_list(id,name,price,quantity,color,description,id_category) value (?,?,?,?,?,?,?);");
-            preparedStatement.setInt(1,product.getId());
+            preparedStatement.setInt(1, product.getId());
             preparedStatement.setString(2, product.getName());
             preparedStatement.setDouble(3, product.getPrice());
             preparedStatement.setInt(4, product.getQuantity());
@@ -57,20 +57,21 @@ public class ProductService implements IProductService {
 
     @Override
     public Product edit(int id, Product product) {
+        PreparedStatement preparedStatement;
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("update product_list set name = ?,price = ?,quantity =?,color=?,description =?, id_category =? where id = ?;");
+            preparedStatement = connection.prepareStatement("update product_list set name = ?,price = ?,quantity =?,color=?,description =?, id_category =? where id = ?;");
             preparedStatement.setInt(7, id);
-            preparedStatement.setString(1,product.getName());
-            preparedStatement.setDouble(2,product.getPrice());
+            preparedStatement.setString(1, product.getName());
+            preparedStatement.setDouble(2, product.getPrice());
             preparedStatement.setInt(3, product.getQuantity());
-            preparedStatement.setString(4,product.getColor());
-            preparedStatement.setString(5,product.getDescription());
-            preparedStatement.setInt(6,product.getId_category());
+            preparedStatement.setString(4, product.getColor());
+            preparedStatement.setString(5, product.getDescription());
+            preparedStatement.setInt(6, product.getId_category());
             preparedStatement.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return null;
+        return product;
     }
 
     @Override
@@ -86,8 +87,8 @@ public class ProductService implements IProductService {
                 int quantity = resultSet.getInt("quantity");
                 String color = resultSet.getString("color");
                 String description = resultSet.getString("description");
-                int id_category = resultSet.getInt("id_category") ;
-                product = new Product(id, name, price, quantity,color,description, id_category);
+                int id_category = resultSet.getInt("id_category");
+                product = new Product(id, name, price, quantity, color, description, id_category);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

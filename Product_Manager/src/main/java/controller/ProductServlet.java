@@ -138,7 +138,7 @@ public class ProductServlet extends HttpServlet {
         int quantity = Integer.parseInt(request.getParameter("quantity"));
         String color = request.getParameter("color");
         String description = request.getParameter("description");
-        int id_category = Integer.parseInt("id_category");
+        int id_category = Integer.parseInt(request.getParameter("id_category"));
         Product product = new Product(id, name, price, quantity, color, description, id_category);
         productService.edit(id, product);
         try {

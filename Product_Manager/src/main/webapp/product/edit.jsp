@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Dat Bong
-  Date: 2/25/2021
-  Time: 8:22 AM
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -43,7 +37,7 @@
             <td><input type="text" name="id_category" value="${product.getId_category()}"></td>
         </tr>
         <tr>
-            <td><input type="submit" value="Chấp nhận"></td>
+            <td><input type="submit" value="Enter"></td>
         </tr>
     </table>
 </form>
