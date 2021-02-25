@@ -15,7 +15,7 @@
 <h2>Product List</h2>
 <table>
     <tr>
-        <td>Id</td>
+<%--        <td>Id</td>--%>
         <td>Name</td>
         <td>Price</td>
         <td>Quantity</td>
@@ -27,7 +27,7 @@
     </tr>
     <c:forEach items="${p}" var="product">
         <tr>
-            <td>${product.getId()}</td>
+<%--            <td>${product.getId()}</td>--%>
             <td>${product.getName()}</td>
             <td>${product.getPrice()}</td>
             <td>${product.getQuantity()}</td>
